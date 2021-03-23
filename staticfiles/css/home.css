@@ -1,0 +1,16 @@
+.imgs {
+    height: 93% !important;
+}
+
+.carousel.carousel-slider {
+    height: 93%;
+}
+
+@media screen and(min-width:2100px) {
+    .carousel.carousel-slider {
+        height: 5000px;
+    }
+    p.para {
+        font-size: 100px;
+    }
+}

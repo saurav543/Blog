@@ -1,0 +1,13 @@
+body {
+    background-color: darkgray;
+    word-wrap: break-word;
+}
+
+#imgs {
+    width: 100%;
+}
+
+.page-footer {
+    margin-left: -227px;
+    margin-right: -227px;
+}

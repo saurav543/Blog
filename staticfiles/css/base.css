@@ -1,0 +1,31 @@
+.input-field .prefix.active {
+    color: white!important;
+}
+
+.autocomplete-content li .highlight {
+    color: white!important;
+}
+
+input#autocomplete-input {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+i.material-icons.prefix {
+    margin-top: -5px;
+}
+
+#mess {
+    margin-top: 0px;
+    height: 80px;
+    padding-top: 30px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+/* .page-footer {
+    margin-left: -200px;
+    margin-right: -200px;
+} */

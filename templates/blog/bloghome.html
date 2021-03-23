@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {%load static%} {% block title%}BlogHome{% endblock %}{% load humanize %} {% block head %}
+<link href="{% static 'css/bloghome.css' %}" type="text/css" rel="stylesheet" media="screen,projection"> {% endblock head %} {% block body %}{% for i in mypost %}
+<div class="row">
+    <div class="col s12 m3 l4">
+        <div class="card ">
+            <div class="card-image waves-effect waves-block waves-light ">
+                <img class="activator imgs responsive-img" src="/media/{{i.thumbnail}} ">
+            </div>
+        </div>
+    </div>
+    <div class="respo">
+        <div class="col s12 m4 l4 grey-text lighten-3 ">
+            <h3>{{i.title}}</h3>
+            <span class='grey-text lighten-3'><i class="material-icons">person_pin</i>
+            {{i.author}}
+            </span><br>
+            <span class='grey-text lighten-3'>
+            <i class="material-icons ">access_time</i>
+            {{i.timestamp}}
+            </span>
+            <p class="para" style="text-align: justify; ">
+                <div class="view">
+                    {{i.content|safe|slice:"300"}}......
+                </div>
+            </p>
+            <span><a href=" /blog/{{i.slug}}">Continue reading</a></span>
+        </div>
+    </div>
+</div> {% endfor %} {% endblock body %} {% block js%}
+<script>
+    let preview = document.getElementsByClassName('view');
+    Array.from(preview).forEach((element) => {
+        element.innerHTML = element.innerText;
+    })
+</script>
+{% endblock %}

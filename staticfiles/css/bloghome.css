@@ -1,0 +1,56 @@
+img.activator.imgs.responsive-img {
+    height: 370px;
+    width: 100%;
+}
+
+@media screen and (min-width:1550px) {
+    .respo {
+        font-size: 38px;
+    }
+    h3 {
+        font-size: 60px;
+    }
+    .para {
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 50px;
+        max-height: 370px;
+    }
+    img.activator.imgs.responsive-img {
+        height: 700px;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1530px) {
+    .respo {
+        font-size: 20px !important;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    .para {
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 30px;
+        max-height: 150px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .respo {
+        font-size: 15px !important;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    .para {
+        white-space: wrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 20px;
+        max-height: 200px;
+    }
+}

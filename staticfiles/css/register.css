@@ -1,0 +1,68 @@
+body {
+    background-image: url(../images/46537.jpg);
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 125%;
+}
+
+.nav-wrapper {
+    background-color: #0066ff!important;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.input-field {
+    margin: 0;
+}
+
+#login-col {
+    padding: 2% 5%;
+    height: 65%;
+    border-radius: 5px;
+    margin-left: 50%;
+    background-color: rgba(250, 250, 250, 0.8);
+    box-shadow: 2px rgba(10, 10, 10, 0.5);
+}
+
+#login-page {
+    background-color: rgba(red, green, blue, 0);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: max-content;
+    margin-top: 3%;
+    width: 100%;
+}
+
+#login-page .card-panel.border-radius-6.login-card {
+    margin-left: 0 !important;
+}
+
+header {
+    color: #000;
+    background-size: cover;
+    background-position: center;
+}
+
+#home ul li a {
+    color: black;
+}
+
+@media screen and (max-width: 670px) {
+    header {
+        min-height: 400px;
+    }
+}
+
+.error {
+    color: red;
+    text-transform: capitalize;
+}

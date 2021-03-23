@@ -1,0 +1,93 @@
+{% extends 'base.html' %} {% load static %} {% block title%}Home{% endblock %}
+<link type="text/css" rel="stylesheets " href=" {%static 'css/home.css'%} "> {% block body %}
+<div class="carousel carousel-slider ">
+    <a class="carousel-item " href="#one! "><img class="imgs " src="{% static 'images/comp.jpg'%} "></a>
+    <a class="carousel-item " href="#two! "><img class="imgs " src="{% static 'images/script.jpg'%} "></a>
+    <a class="carousel-item " href="#three! "><img class="imgs " src="{% static 'images/outbox.jpg'%} "></a>
+    <a class="carousel-item " href="#four! "><img class="imgs " src="{% static 'images/toughness.jpg'%} "></a>
+</div>
+<div class="row ">
+    <div class="col s12 m4 l4 push-l1 ">
+        <p class="flow-text " style="text-align: justify; ">
+            Popular food delivery service Postmates is in the process of merging with Uber in a blockbuster $2.65 billion deal that would see it join forces with its food delivery competitor, Uber Eats. The deal remains under antitrust scrutiny, and has not yet been
+            approved for closing. The deal is expected to close in the first half of 2021. However, a new SEC filing posted after hours this Friday gives us a glimpse into how Postmates is faring in the new world of global pandemics and sit-in dining
+            closures across the United States. Postmates posted a loss of just $32.2 million in Q2, compared to a loss of $73 million in Q1, nearly cutting its cash burning in half. That compares to Uber Eats’ results, which showed a loss of $286 million
+
+        </p>
+    </div>
+    <div class="col s12 m4 l4 push-l2 mt-3 " style="margin-top: 50px; ">
+        <img src="{% static 'images/toughness.jpg' %} " class="circle responsive-img materialboxed ">
+    </div>
+</div>
+<div class="parallax-container ">
+    <div class="parallax "><img src="{% static 'images/booklib.jpg'%} "></div>
+</div>
+<div class="row " style="margin-top:30px; ">
+
+    <div class="col s12 m4 l4 push-l6 ">
+        <p class="flow-text " style="text-align: justify; ">
+            Popular food delivery service Postmates is in the process of merging with Uber in a blockbuster $2.65 billion deal that would see it join forces with its food delivery competitor, Uber Eats. The deal remains under antitrust scrutiny, and has not yet been
+            approved for closing. The deal is expected to close in the first half of 2021. However, a new SEC filing posted after hours this Friday gives us a glimpse into how Postmates is faring in the new world of global pandemics and sit-in dining
+
+        </p>
+    </div>
+    <div class="col s12 m4 l4 pull-l4 offset-l1 " style="margin-top: 50px; ">
+        <img src="{% static 'images/beach.jpg' %} " class="responsive-img materialboxed ">
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col s12 m4 l4 offset-l1 ">
+        <p class="flow-text " style="text-align: justify; ">
+            Popular food delivery service Postmates is in the process of merging with Uber in a blockbuster $2.65 billion deal that would see it join forces with its food delivery competitor, Uber Eats. The deal remains under antitrust scrutiny, and has not yet been
+            approved for closing. The deal is expected to close in the first half of 2021. However, a new SEC filing posted after hours this Friday gives us a glimpse into how Postmates is faring in the new world of global pandemics and sit-in dining
+
+        </p>
+    </div>
+    <div class="col s12 m4 l4 push-l1 ">
+        <img src="{% static 'images/beauty.jpg' %} " class="responsive-img materialboxed ">
+    </div>
+</div>
+<div class="row ">
+
+    <div class="col s12 m4 l4 push-l6 ">
+        <p class="flow-text " style="text-align: justify; ">
+            Popular food delivery service Postmates is in the process of merging with Uber in a blockbuster $2.65 billion deal that would see it join forces with its food delivery competitor, Uber Eats. The deal remains under antitrust scrutiny, and has not yet been
+            approved for closing. The deal is expected to close in the first half of 2021. However, a new SEC filing posted after hours this Friday gives us a glimpse into how Postmates is faring in the new world of global pandemics and sit-in dining
+        </p>
+    </div>
+    <div class="col s12 m4 l4 pull-l4 offset-l1 mt-20 " style="margin-top: 100px; ">
+        <img src="{%static 'images/powerpen.jpg' %} " class="circle responsive-img materialboxed ">
+    </div>
+</div>
+<div class="parallax-container ">
+    <div class="parallax "><img src="{% static 'images/write.jpg'%} "></div>
+</div>
+<div class="row " style="margin-top:30px; ">
+    <div class="col s12 m4 l4 push-l6 ">
+        <p class="flow-text " style="text-align: justify; ">
+            Popular food delivery service Postmates is in the process of merging with Uber in a blockbuster $2.65 billion deal that would see it join forces with its food delivery competitor, Uber Eats. The deal remains under antitrust scrutiny, and has not yet been
+            approved for closing. The deal is expected to close in the first half of 2021. However, a new SEC filing posted after hours this Friday gives us a glimpse into how Postmates is faring in the new world of global pandemics and sit-in dining
+
+        </p>
+    </div>
+    <div class="col s12 m4 l4 pull-l4 offset-l1 mt-20 ">
+        <img src="{% static 'images/together.jpg' %} " class="circle responsive-img materialboxed ">
+    </div>
+</div>
+{% endblock body %} {% block js%}
+<script>
+    $(document).ready(function() {
+        $('.parallax').parallax();
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true
+        }, setInterval(autoplay, 4500));
+
+        function autoplay() {
+            $('.carousel').carousel('next');
+            setTimeout(autoplay, 4500);
+        }
+        $('.matrialboxed').materialbox();
+    });
+</script>
+{% endblock%}

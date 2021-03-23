@@ -1,0 +1,44 @@
+body {
+  background-image: url(../images/back.jpg );
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.nav-wrapper {
+  background-color: #0066ff!important;
+}
+.input-field {
+  margin: 0;
+}
+
+.btn{
+  border-radius: 20px;
+}
+
+#login-col{
+  padding: 0 5%;
+  height: 65%;
+  border-radius: 5px;
+  margin: auto;
+  background-color: rgba(250,250, 250, 0.1);
+  box-shadow: 2px rgba(10, 10, 10, 0.5);
+}
+
+#login-page {
+ margin-right: 10%;
+  background-color:rgba(red, green, blue, 0);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#login-page .card-panel.border-radius-6.login-card {
+  margin-left: 0 !important;
+}
