@@ -32,7 +32,7 @@ SECRET_KEY = 'oqznx(htzck&8!(oq#y9w+et(k$o@7@d0l2q6od6rhma0nk_29'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['saurav-blogs.herokuapp','0.0.0.0','127.0.0.1']
+ALLOWED_HOSTS = ['saurav-blogs.herokuapp.com','0.0.0.0','127.0.0.1']
 
 
 # Application definition
