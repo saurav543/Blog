@@ -13,6 +13,6 @@ def authenticated_user(view_func):
         if request.user.is_authenticated:
             return view_func(request,*args,**kwargs)
         else: 
-            return redirect('home')
+            return redirect('/signIn')
             
     return wrapper_func

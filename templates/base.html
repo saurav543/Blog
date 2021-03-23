@@ -1,75 +1,64 @@
 {% load static %}
-<!DOCTYPE html>
-<html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{%endblock %}</title>
     <link rel="shortcut icon" type="image/png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <link rel="stylesheets" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous" />
-    <link rel="stylesheets" type="text/css" href="{% static 'css/base.css'%}" media="screen,projection" /> {% block head %}{% endblock %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="{% static  'css/base.css' %}" type="text/css" rel="stylesheet" media="screen,projection" /> {% block head %}{% endblock %}
 </head>
 
 <body>
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper blue lighten-1">
-                <a href="/" class="brand-logo">Logo</a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a
-          >
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <form action="/search/" method="GET">
-                {% csrf_token %}
-                <div class="row">
-                  <div class="col s12">
-                    <div class="row">
-                      <div class="input-field col s12">
-                        <i class="material-icons prefix">search</i>
-                        <input
-                          type="text"
-                          class="autocomplete"
-                          name="search"
-                          id="autocomplete-input"
-                          placeholder="Search"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </li>
-            <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/about">About</a></li>
-                {% if user.is_authenticated %}
-                <li>
-                    <a class="dropdown-trigger btn blue lighten-1" href="#" data-target="dropdown2">{{request.user}}</a
-              >
-            </li>
+                <a href="/" class="brand-logo ">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <form action="/search/" method="GET">{% csrf_token %}
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">search</i>
+                                            <input type="text" class="autocomplete" name="search" id="autocomplete-input" placeholder="Search" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                    {% if user.is_authenticated %}
 
-            <!-- Dropdown Structure -->
-            <ul id="dropdown2" class="dropdown-content">
-              <li><a href="/profile">Profile</a></li>
-                <li><a href="/signOut">Logout</a></li>
-                </ul>
-                {% else %}
-                <li><a href="/signUp">SignUp</a></li>
-                <li><a href="/signIn">SignIn</a></li>
-                {% endif %}
+                    <li><a class='dropdown-trigger btn blue lighten-1' href='#' data-target='dropdown2'>{{request.user}}</a></li>
+
+                    <!-- Dropdown Structure -->
+                    <ul id='dropdown2' class='dropdown-content'>
+                        <li><a href="/signOut">Logout</a></li>
+                    </ul>
+                    {% else %}
+                    <li><a href="/signUp">SignUp</a></li>
+                    <li><a href="/signIn">SignIn</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
     </div>
     {%for message in messages %}
 
-    <div class="card-panel {{ message.tags }}" id="mess" style="margin-bottom: -10px">
-        <li style="text-align: center">{{ message }}</li>
+    <div class="card-panel {{ message.tags }}" id="mess">
+        <li style="text-align:center;">{{ message }}</li>
     </div>
     {% endfor %}
     <ul class="sidenav" id="mobile-demo">
@@ -93,85 +82,72 @@
         <li><a href="/about">About</a></li>
         {% if user.is_authenticated %}
 
-        <li>
-            Welcom
-            <a class="dropdown-trigger btn blue lighten-3" href="#" data-target="dropdown1">{{request.user}}</a
-        >
-      </li>
-      <ul id="dropdown1" class="dropdown-content blue lighten-3">
-        <li><a href="signOut">Logout</a></li>
-    </ul>
-    {% else %}
-    <li><a href="/signUp">SignUp</a></li>
-    <li><a href="/signIn">SignIn</a></li>
-    {% endif %}
+        <li>Welcom <a class='dropdown-trigger btn blue lighten-3' href='#' data-target='dropdown1'>{{request.user}}</a>
+        </li>
+        <ul id='dropdown1' class='dropdown-content blue lighten-3'>
+            <li><a href="signOut">Logout</a></li>
+        </ul>
+        {% else %}
+        <li><a href="/signUp">SignUp</a></li>
+        <li><a href="/signIn">SignIn</a></li>
+        {% endif %}
     </ul>
     {% block body %}{% endblock %}
+    <footer class="page-footer blue lighten-1" style="margin-bottom:-22px ;">
+        <div class="container">
+            <div class="row">
+                <div class="col l3 s12 pull-l1">
+                    <h5 class="white-text">Address</h5>
+                    <i class="material-icons medium">home</i>
+                    <p class="grey-text text-lighten-4">27, subhash park,<br>Bisalpur 262201<br>Uttar Pradesh
+                    </p>
+                </div>
+                <div class="col l3 s12  ">
+                    <h5 class="white-text">Contact</h5>
+                    <p class="grey-text text-lighten-4"><span>clog123@gamil.com</span><i class="material-icons">email</i><br>
+                        <span>+91(23)-234887<br>+91989827345</span><i class="material-icons small">phone</i><br>
+                    </p>
+                </div>
+                <div class="col l4 push-l3 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li style="margin-top: 20px;"> <a href="/facebook.com" data-position="right" class="btn-floating btn-medium indigo darken-4"><i
+                                    class="fab fa-facebook medium circle"></i></a><span style="margin-left:20px">Facebook</span></li>
+                        <li style="margin-top: 20px;"><a href="/twitter.com" data-position="right" class="btn-floating btn-medium indigo darken-4"><i class="fab fa-twitter medium"></i></a><span style="margin-left:20px">Twitter</span></li>
+                        <li style="margin-top: 20px;">
+                            <a href="/Linkedin.com" data-position="right" class="btn-floating btn-medium indigo darken-4 ">
+                                <i class="circle fab fa-linkedin medium "></i></a><span style="margin-left:20px">LinkedIn</span>
+                        </li>
+                        <li style="margin-top: 20px;">
+                            <a href="https/Instagram.com" data-position="right" class="btn-floating btn-medium indigo darken-4">
+                                <i class="circle fab fa-instagram medium "></i></a><span style="margin-left:20px">Instagram</span>
+                        </li>
 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container center">
+                CLog© 2014 Copyright Text
+            </div>
+        </div>
+    </footer>
     <script>
         $(document).ready(function() {
-            $(".sidenav").sidenav();
-            $(".dropdown-trigger").dropdown();
-            $(".tooltipped").tooltip();
-        });
+            $('.sidenav').sidenav();
+            $('.dropdown-trigger').dropdown();
+            $('.tooltipped').tooltip();
 
-        function move() {
-            setTimeout(function() {
-                document.getElementById("mess").style.display = "none";
-            }, 1500);
-        }
-        move();
-        //var div = document.getElementById("mess");
-        //div.parentNode.removeChild(div);
+            function move() {
+                setInterval(function() {
+                    document.getElementById('mess').style.display = "none";
+                }, 1500);
+            };
+            move();
+        });
     </script>
     {% block js %} {% endblock %}
 </body>
-{% block footer %}{% endblock %}
-<footer class="page-footer blue lighten-1" style="margin-bottom: -22px">
-    <div class="container blogposts center">
-        <div class="row">
-            <div class="col m4 l3 s12 pull-l1 push-m1">
-                <h5 class="white-text">Address</h5>
-                <i class="material-icons medium">home</i>
-                <p class="grey-text text-lighten-4">
-                    27, subhash park,<br />Bisalpur 262201<br />Uttar Pradesh
-                </p>
-            </div>
-            <div class="col m4 l3 s12 push-l1">
-                <h5 class="white-text">Contact</h5>
-                <p class="grey-text text-lighten-4">
-                    <span>clog123@gamil.com</span><i class="material-icons">email</i
-            ><br />
-            <span>+91(23)-234887<br />+91989827345</span
-            ><i class="material-icons small">phone</i><br />
-                </p>
-            </div>
-            <div class="col l4 m4 s12 push-l2">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li style="margin-top: 20px">
-                        <a href="/facebook.com " data-position="right " class="btn-floating btn-medium indigo darken-4">
-                            <i class="fab fa-facebook medium circle"></i></a><span style="margin-left: 20px">Facebook</span>
-                    </li>
-                    <li style="margin-top: 20px">
-                        <a href="/twitter.com " data-position="right " class="btn-floating btn-medium indigo darken-4">
-                            <i class="fab fa-twitter medium"></i></a><span style="margin-left: 20px">Twitter</span>
-                    </li>
-                    <li style="margin-top: 20px">
-                        <a href="/Linkedin.com " data-position="right " class="btn-floating btn-medium indigo darken-4">
-                            <i class="circle fab fa-linkedin medium"></i></a><span style="margin-left: 20px">LinkedIn</span>
-                    </li>
-                    <li style="margin-top: 20px">
-                        <a href="https/Instagram.com " data-position="right " class="btn-floating btn-medium indigo darken-4">
-                            <i class="circle fab fa-instagram medium"></i></a><span style="margin-left: 20px">Instagram</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <div class="container center">CLog© 2014 Copyright Text</div>
-    </div>
-</footer>
 
 </html>
